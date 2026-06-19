@@ -1,0 +1,242 @@
+/* Interactive Tree View */
+.tree-node {
+  padding-left: 20px;
+  position: relative;
+  font-family: 'Consolas', 'Courier New', Courier, monospace;
+  font-size: 13px;
+  margin: 3px 0;
+}
+
+.tree-node-line {
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border-color);
+}
+
+.tree-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.tree-header:hover {
+  background: var(--bg-hover);
+}
+
+.tree-arrow {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.tree-arrow.expanded {
+  transform: rotate(90deg);
+  color: var(--primary-accent);
+}
+
+.key-name {
+  color: var(--code-key);
+  font-weight: 500;
+}
+
+.val-string {
+  color: var(--code-string);
+}
+
+.val-number {
+  color: var(--code-number);
+}
+
+.val-bool {
+  color: var(--code-bool);
+}
+
+.val-null {
+  color: var(--code-null);
+  opacity: 0.8;
+}
+
+.val-bracket {
+  color: var(--code-bracket);
+}
+
+/* Table View */
+.table-container {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.grid-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.grid-table th {
+  background: var(--bg-table-header);
+  color: var(--text-secondary);
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  user-select: none;
+  cursor: pointer;
+}
+
+.grid-table th:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.grid-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.grid-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-primary);
+}
+
+/* Graph View */
+.graph-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--bg-graph-container);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graph-svg-wrapper {
+  min-width: 1200px;
+  min-height: 800px;
+  position: relative;
+}
+
+.graph-node-rect {
+  fill: var(--bg-secondary);
+  stroke: rgba(99, 102, 241, 0.4);
+  stroke-width: 1.5;
+  rx: 8;
+  ry: 8;
+  transition: all 0.2s;
+}
+
+.graph-node-rect:hover {
+  stroke: var(--primary-accent);
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+}
+
+.graph-node-rect.root {
+  fill: rgba(124, 58, 237, 0.2);
+  stroke: #a855f7;
+}
+
+.graph-node-text {
+  font-family: 'Outfit', sans-serif;
+  fill: var(--text-primary);
+  font-size: 12px;
+}
+
+.graph-node-key {
+  font-weight: 600;
+  fill: #a5b4fc;
+}
+
+.graph-link-line {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1.5;
+  transition: stroke 0.2s;
+}
+
+.graph-node-rect:hover ~ .graph-link-line {
+  stroke: rgba(99, 102, 241, 0.4);
+}
+
+/* Stat bar */
+.stat-bar {
+  display: flex;
+  gap: 24px;
+  padding: 8px 20px;
+  background: var(--bg-pane-header);
+  border-top: 1px solid var(--border-color);
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  height: 36px;
+  box-sizing: border-box;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-val {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Query panel styling */
+.query-panel {
+  display: flex;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--bg-pane-header);
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.query-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 4px 12px;
+}
+
+.query-input-wrapper:focus-within {
+  border-color: var(--primary-accent);
+}
+
+.query-icon {
+  color: var(--text-muted);
+}
+
+.query-field {
+  background: transparent;
+  border: none;
+  outline: none;
+  flex: 1;
+  color: var(--text-primary);
+  font-size: 13px;
+  padding: 4px 0;
+}

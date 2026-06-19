@@ -1,0 +1,83 @@
+/* Mock generator layout */
+.generator-layout {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.generator-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.generator-section label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.template-card {
+  border: 1px solid var(--border-color);
+  background: var(--bg-card-element);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.template-card:hover {
+  border-color: var(--border-glow);
+  background: var(--bg-hover);
+}
+
+.template-card.active {
+  border-color: var(--primary-accent);
+  background: var(--menu-active-bg);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.15);
+}
+
+.template-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.template-card.active .template-title {
+  color: var(--text-primary);
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.slider-container input[type="range"] {
+  flex: 1;
+  accent-color: var(--primary-accent);
+}
+
+.slider-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  width: 50px;
+  text-align: right;
+}
+
+/* Custom class for the option pane background contrast */
+.generator-pane-left {
+  background: var(--bg-panel-left) !important;
+}
