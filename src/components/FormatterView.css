@@ -69,6 +69,24 @@
   color: var(--code-bracket);
 }
 
+.tree-copy-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 10px;
+  transition: color 0.15s;
+}
+
+.tree-copy-btn:hover {
+  color: var(--primary-accent);
+}
+
+.tree-copy-btn.copied {
+  color: var(--success);
+}
+
 /* Table View */
 .table-container {
   padding: 20px;
@@ -113,8 +131,13 @@
 }
 
 .grid-table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--bg-hover);
   color: var(--text-primary);
+}
+
+.table-null-dash {
+  color: var(--text-muted);
+  opacity: 0.5;
 }
 
 /* Graph View */

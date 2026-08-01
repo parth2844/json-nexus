@@ -250,6 +250,7 @@ body {
   flex: 1;
   overflow: hidden; /* Stop outer layout scroll thrashing around Monaco editors */
   position: relative;
+  background: var(--bg-editor-panel);
 }
 
 /* Buttons and Controls */

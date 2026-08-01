@@ -131,12 +131,12 @@ export const SchemaValidatorView: React.FC<SchemaValidatorViewProps> = ({ theme 
         {jsonSyntaxError && !schemaError && (
           <div className="error-banner" style={{ margin: 0, borderColor: 'rgba(245, 158, 11, 0.4)', background: 'rgba(245, 158, 11, 0.1)' }}>
             <AlertTriangle size={18} style={{ color: '#f59e0b' }} />
-            <div style={{ color: '#fde047' }}><strong>Target JSON Syntax Error:</strong> {jsonSyntaxError}</div>
+            <div style={{ color: theme === 'dark' ? '#fde047' : '#b45309' }}><strong>Target JSON Syntax Error:</strong> {jsonSyntaxError}</div>
           </div>
         )}
 
         {isValid && !schemaError && !jsonSyntaxError && (
-          <div className="error-banner" style={{ margin: 0, borderColor: 'rgba(16, 185, 129, 0.4)', background: 'rgba(16, 185, 129, 0.1)', color: '#a7f3d0' }}>
+          <div className="error-banner" style={{ margin: 0, borderColor: 'rgba(16, 185, 129, 0.4)', background: 'rgba(16, 185, 129, 0.1)', color: theme === 'dark' ? '#a7f3d0' : '#065f46' }}>
             <CheckCircle size={18} style={{ color: '#10b981' }} />
             <div><strong>Success:</strong> JSON is fully compliant with the provided Schema!</div>
           </div>
@@ -151,7 +151,7 @@ export const SchemaValidatorView: React.FC<SchemaValidatorViewProps> = ({ theme 
             <div style={{ marginTop: '8px', paddingLeft: '30px', width: '100%', maxHeight: '120px', overflowY: 'auto' }}>
               {validationErrors.map((err, i) => (
                 <div key={i} style={{ fontSize: '12px', margin: '4px 0', fontFamily: 'monospace' }}>
-                  <span style={{ color: '#fca5a5' }}>{err.instancePath || '/'}</span>: {err.message} 
+                  <span style={{ color: theme === 'dark' ? '#fca5a5' : '#b91c1c' }}>{err.instancePath || '/'}</span>: {err.message} 
                   {err.params && Object.keys(err.params).length > 0 && (
                     <span style={{ opacity: 0.6, marginLeft: '6px' }}>({JSON.stringify(err.params)})</span>
                   )}

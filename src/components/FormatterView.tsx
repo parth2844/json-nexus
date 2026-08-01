@@ -408,7 +408,7 @@ export const FormatterView: React.FC<FormatterViewProps> = ({ initialCode = '', 
               </div>
             </div>
             
-            <div className="pane-body" style={{ background: '#0a0d16' }}>
+            <div className="pane-body">
               {activeTab === 'code' && (
                 <Editor
                   height="100%"
@@ -517,14 +517,7 @@ const RecursiveTreeNode: React.FC<TreeElementProps> = ({ name, value, depth, pat
           <span>{renderValueText()}</span>
           <button 
             onClick={handleCopyPath} 
-            style={{ 
-              background: 'transparent', 
-              border: 'none', 
-              color: copied ? '#10b981' : '#475569', 
-              cursor: 'pointer', 
-              marginLeft: '8px', 
-              fontSize: '10px' 
-            }}
+            className={`tree-copy-btn ${copied ? 'copied' : ''}`}
             title="Copy path"
           >
             {copied ? 'Copied' : 'copy path'}
@@ -546,17 +539,10 @@ const RecursiveTreeNode: React.FC<TreeElementProps> = ({ name, value, depth, pat
         <span className={`tree-arrow ${isExpanded ? 'expanded' : ''}`}>▶</span>
         <span className="key-name">{name}:</span>
         <span className="val-bracket">{bracketOpen}</span>
-        <span style={{ fontSize: '11px', color: '#64748b', marginLeft: '6px' }}>{sizeText}</span>
+        <span style={{ fontSize: '11px', color: 'var(--text-muted)', marginLeft: '6px' }}>{sizeText}</span>
         <button 
           onClick={handleCopyPath} 
-          style={{ 
-            background: 'transparent', 
-            border: 'none', 
-            color: copied ? '#10b981' : '#475569', 
-            cursor: 'pointer', 
-            marginLeft: '8px', 
-            fontSize: '10px' 
-          }}
+          className={`tree-copy-btn ${copied ? 'copied' : ''}`}
           title="Copy path"
         >
           {copied ? 'Copied' : 'copy path'}
@@ -688,7 +674,7 @@ const TableVisualizer: React.FC<{ data: any }> = ({ data }) => {
                 }
                 return (
                   <td key={header} title={displayVal}>
-                    {displayVal === '' ? <span style={{ opacity: 0.2 }}>—</span> : displayVal}
+                    {displayVal === '' ? <span className="table-null-dash">—</span> : displayVal}
                   </td>
                 );
               })}
