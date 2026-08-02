@@ -313,7 +313,7 @@ export const ConverterView: React.FC<ConverterViewProps> = ({ theme }) => {
                 onChange={(val) => setInputText(val || '')}
                 options={{
                   minimap: { enabled: false },
-                  fontSize: 13,
+                  fontSize: 14,
                   lineNumbers: 'on',
                   scrollBeyondLastLine: false,
                   automaticLayout: true,
@@ -341,7 +341,7 @@ export const ConverterView: React.FC<ConverterViewProps> = ({ theme }) => {
                 options={{
                   readOnly: true,
                   minimap: { enabled: false },
-                  fontSize: 13,
+                  fontSize: 14,
                   lineNumbers: 'on',
                   scrollBeyondLastLine: false,
                   automaticLayout: true,

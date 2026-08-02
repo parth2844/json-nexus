@@ -103,7 +103,7 @@ export const EscaperView: React.FC<EscaperViewProps> = ({ theme }) => {
                 onChange={(val) => setRawText(val || '')}
                 options={{
                   minimap: { enabled: false },
-                  fontSize: 13,
+                  fontSize: 14,
                   lineNumbers: 'on',
                   scrollBeyondLastLine: false,
                   automaticLayout: true,
@@ -137,7 +137,7 @@ export const EscaperView: React.FC<EscaperViewProps> = ({ theme }) => {
                 onChange={(val) => setEscapedText(val || '')}
                 options={{
                   minimap: { enabled: false },
-                  fontSize: 13,
+                  fontSize: 14,
                   lineNumbers: 'on',
                   scrollBeyondLastLine: false,
                   automaticLayout: true,

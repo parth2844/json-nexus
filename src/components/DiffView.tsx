@@ -93,7 +93,7 @@ export const DiffView: React.FC<DiffViewProps> = ({ theme }) => {
             }}
             options={{
               minimap: { enabled: false },
-              fontSize: 13,
+              fontSize: 14,
               lineNumbers: 'on',
               scrollBeyondLastLine: false,
               automaticLayout: true,

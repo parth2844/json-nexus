@@ -359,7 +359,7 @@ export const FormatterView: React.FC<FormatterViewProps> = ({ initialCode = '', 
                 onChange={(val) => setJsonText(val || '')}
                 options={{
                   minimap: { enabled: false },
-                  fontSize: 13,
+                  fontSize: 14,
                   lineNumbers: 'on',
                   scrollBeyondLastLine: false,
                   automaticLayout: true,
@@ -422,7 +422,7 @@ export const FormatterView: React.FC<FormatterViewProps> = ({ initialCode = '', 
                   options={{
                     readOnly: true,
                     minimap: { enabled: false },
-                    fontSize: 13,
+                    fontSize: 14,
                     lineNumbers: 'on',
                     scrollBeyondLastLine: false,
                     automaticLayout: true,

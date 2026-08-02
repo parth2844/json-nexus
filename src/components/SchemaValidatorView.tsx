@@ -181,7 +181,7 @@ export const SchemaValidatorView: React.FC<SchemaValidatorViewProps> = ({ theme 
                 onChange={(val) => setSchemaText(val || '')}
                 options={{
                   minimap: { enabled: false },
-                  fontSize: 13,
+                  fontSize: 14,
                   lineNumbers: 'on',
                   scrollBeyondLastLine: false,
                   automaticLayout: true,
@@ -207,7 +207,7 @@ export const SchemaValidatorView: React.FC<SchemaValidatorViewProps> = ({ theme 
                 onChange={(val) => setJsonText(val || '')}
                 options={{
                   minimap: { enabled: false },
-                  fontSize: 13,
+                  fontSize: 14,
                   lineNumbers: 'on',
                   scrollBeyondLastLine: false,
                   automaticLayout: true,
